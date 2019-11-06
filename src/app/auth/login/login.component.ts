@@ -4,8 +4,6 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { AuthService } from '../auth.service';
-import { UIService } from 'src/app/shared/ui.service';
-
 import * as fromRoot from '../../app.reducer';
 
 @Component({
@@ -20,8 +18,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private uiService: UIService,
-    private store: Store<fromRoot.State>) { }
+    private store: Store<fromRoot.State>
+  ) { }
 
   ngOnInit() {
     this.isLoading$ = this.store.select(fromRoot.getIsLoading);
